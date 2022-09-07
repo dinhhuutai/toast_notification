@@ -1,0 +1,348 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #313b46;
+    overflow: hidden;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+.tilte {
+    font-size: 6.8rem;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.wrapper-btn{
+    margin-top: 150px;
+    display: flex;
+    gap: 30px;
+}
+
+.btn {
+    font-size: 1.7rem;
+    padding: 16px 32px;
+    background-color: red;
+    border-radius: 30px;
+    box-shadow: inset 0px 0px 10px 2px #fff;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn-success{
+    background-color: #2d6a4f;
+}
+
+.btn-success:hover {
+    background-color: #004440;
+}
+
+.btn-warning{
+    background-color: #fca652;
+}
+
+.btn-warning:hover {
+    background-color: #cc561e;
+}
+
+.btn-error{
+    background-color: #f05454;
+}
+
+.btn-error:hover {
+    background-color: #af2d2d;
+}
+
+.btn-help{
+    background-color: #b8b5ff;
+}
+
+.btn-help:hover {
+    background-color: #7868e6;
+}
+
+
+/*  Notification  */
+.wrapper-ntf{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+
+.ntf-item{
+    position: relative;
+    width: 364px;
+    border-radius: 20px;
+    padding: 16px 32px;
+    transition: all linear .5s;
+    animation: slideIn 2.5s ease, slideOut 2.5s ease 2.5s forwards;
+}
+
+.ntf-item + .ntf-item {
+    margin-top: 60px;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(calc(100% + 50px));
+    }
+    40% {
+        transform: translateX(0px);
+    }
+    80% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        transform: translateX(0px);
+    }
+    40% {
+        transform: translateX(10px);
+    }
+    80% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(calc(100% + 50px));
+    }
+}
+
+.ntf-header{
+    position: absolute;
+    top: -15px;
+    left: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    font-size: 1.6rem;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.ntf-header::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 7px;
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    transform: rotate(60deg);
+    z-index: -1;
+}
+
+.ntf-body{
+    display: flex;
+}
+
+.ntf-background{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    height: 90px;
+    border-radius: 20px;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.ellipse-1{
+    position: absolute;
+    top: 90%;
+    right: -6%;
+    width: 150px;
+    height: 150px;
+    border-radius: 25%;
+    transform: rotate(60deg);
+}
+
+.ellipse-1--children{
+    position: absolute;
+    top: 76%;
+    left: 25%;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    transform: rotate(15deg);
+}
+
+.ellipse-2{
+    position: absolute;
+    top: 60%;
+    left: 16%;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transform: rotate(15deg);
+}
+
+.ellipse-2--children{
+    position: absolute;
+    top: 68%;
+    left: 22%;
+    width: 5px;
+    height: 5px;
+    border-radius: 1px;
+    transform: rotate(12deg);
+}
+
+.ellipse-3{
+    position: absolute;
+    top: 40%;
+    left: 14%;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    transform: rotate(15deg);
+}
+
+.ellipse-4{
+    position: absolute;
+    top: 44%;
+    left: 40%;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    transform: rotate(15deg);
+}
+
+
+.ntf-info{
+    margin-left: 50px;
+    z-index: 5;
+}
+
+.ntf-title{
+    line-height: 3.2rem;
+    font-size: 3rem;
+    margin-bottom: 14px;
+}
+
+.ntf-content{
+    font-size: 1.6rem;
+    line-height: 2rem;
+}
+
+.ntf-closed{
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    padding: 6px;
+    font-size: 2.8rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.ntf-time {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 50px;
+    height: 4px;
+    width: 92%;
+    left: 4%;
+    animation: showTime linear 4.5s forwards;
+}
+
+@keyframes showTime {
+    20% {
+        width: 92%;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+/*   Success    */
+.ntf-item.success {
+    background-color: #1f4937;
+}
+
+.ntf-item.success .ntf-header,
+.ntf-item.success .ntf-header::after,
+.ntf-item.success .ellipse-1,
+.ntf-item.success .ellipse-1--children,
+.ntf-item.success .ellipse-2,
+.ntf-item.success .ellipse-2--children,
+.ntf-item.success .ellipse-3,
+.ntf-item.success .ellipse-4,
+.ntf-item.success .ntf-time {
+    background-color: #002f2c;
+}
+
+/*  Warning  */
+.ntf-item.warning {
+    background-color: #ae7339;
+}
+
+.ntf-item.warning .ntf-header,
+.ntf-item.warning .ntf-header::after,
+.ntf-item.warning .ellipse-1,
+.ntf-item.warning .ellipse-1--children,
+.ntf-item.warning .ellipse-2,
+.ntf-item.warning .ellipse-2--children,
+.ntf-item.warning .ellipse-3,
+.ntf-item.warning .ellipse-4,
+.ntf-item.warning .ntf-time {
+    background-color: #8d3b15;
+}
+/*   Error    */
+.ntf-item.error {
+    background-color: #a63a3a;
+}
+
+.ntf-item.error .ntf-header,
+.ntf-item.error .ntf-header::after,
+.ntf-item.error .ellipse-1,
+.ntf-item.error .ellipse-1--children,
+.ntf-item.error .ellipse-2,
+.ntf-item.error .ellipse-2--children,
+.ntf-item.error .ellipse-3,
+.ntf-item.error .ellipse-4,
+.ntf-item.error .ntf-time  {
+    background-color: #791f1f;
+}
+
+/*  Help  */
+.ntf-item.help {
+    background-color: #7f7db0;
+}
+
+.ntf-item.help .ntf-header,
+.ntf-item.help .ntf-header::after,
+.ntf-item.help .ellipse-1,
+.ntf-item.help .ellipse-1--children,
+.ntf-item.help .ellipse-2,
+.ntf-item.help .ellipse-2--children,
+.ntf-item.help .ellipse-3,
+.ntf-item.help .ellipse-4,
+.ntf-item.help .ntf-time  {
+    background-color: #53489f;
+}
+
